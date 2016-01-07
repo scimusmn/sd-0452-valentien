@@ -1,10 +1,10 @@
 {
-  "name": "electron-boilerplate",
-  "productName": "Electron Boilerplate",
-  "identifier": "com.example.electron-boilerplate",
-  "description": "Starter for your Electron application. Out of the box ready for serious stuff.",
-  "version": "0.1.0",
-  "author": "Mr Gumby",
+  "name": "valentien",
+  "productName": "Valentien painting viewer",
+  "identifier": "org.smm.sdnhm.c2c.valentien",
+  "description": "Zoomable painting viewer for the San Diego Natural History Museum's Coast to Cactus exhibit.",
+  "version": "0.0.1",
+  "author": "Science Museum of Minnesota",
   "main": "background.js",
   "dependencies": {
     "fs-jetpack": "^0.7.0"
