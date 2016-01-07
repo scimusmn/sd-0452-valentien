@@ -17,9 +17,10 @@ var destDir = projectDir.cwd('./build');
 var paths = {
   copyFromAppDir: [
       './node_modules/**',
+      './assets/**',
       './vendor/**',
       './**/*.html',
-      './**/*.+(jpg|png|svg)',
+      './**/*.+(jpg|png|svg|css)',
   ],
 };
 
@@ -98,7 +99,7 @@ gulp.task('bundle', ['clean'], bundleTask);
 gulp.task('bundle-watch', bundleTask);
 
 var lessTask = function() {
-  return gulp.src('app/stylesheets/main.less')
+  return gulp.src('app/stylesheets/*.less')
   .pipe(less())
   .pipe(gulp.dest(destDir.path('stylesheets')));
 };
