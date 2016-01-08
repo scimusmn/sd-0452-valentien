@@ -10,7 +10,16 @@
   <script src="vendor/electron_boilerplate/context_menu.js"></script>
   <script src="vendor/electron_boilerplate/external_links.js"></script>
 
+  <!--
+  Require jQuery and define its variables before loading any of our code.
+  This ensure that jQuery is avaiable for any of the 3rd party modules.
+  https://github.com/atom/electron/issues/345
+  -->
+  <script type="text/javascript" src="vendor/jquery/dist/jquery.js" onload="window.$ = window.jQuery = module.exports;"></script>
+
+  <!-- Main application code -->
   <script src="app.js"></script>
+
 </head>
 <body>
   <div id="wrapper">
