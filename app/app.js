@@ -6,7 +6,8 @@ import env from './env';
 
 import { tween } from './vendor/gsap/src/minified/TweenMax.min';
 import { Zoomer } from './vendor/Zoomer/jquery.fs.zoomer.min';
-import { videojs } from './vendor/video-js/dist/video-js/video';
+// TODO: Removing for now. Find out whether this is used in final app.
+//import { videojs } from './vendor/video-js/dist/video-js/video';
 
 console.log('Loaded environment variables:', env);
 
