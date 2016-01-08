@@ -15,7 +15,26 @@ var app = remote.app;
 var appDir = jetpack.cwd(app.getAppPath());
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('greet').innerHTML = greet();
-  document.getElementById('platform-info').innerHTML = os.platform();
-  document.getElementById('env-name').innerHTML = env.name;
+
+  //Load XML
+  console.log($);
+  $.ajax({
+    type: 'GET',
+    url: './assets/static/data/config.xml',
+    dataType: 'xml',
+    success: function(xml) {
+
+      AppData.updateSettings(xml);
+      initialize();
+
+    },
+
+    error: function(jqXHR, textStatus, errorThrown) {
+    },
+
+  });
+
+  // document.getElementById('greet').innerHTML = greet();
+  // document.getElementById('platform-info').innerHTML = os.platform();
+  // document.getElementById('env-name').innerHTML = env.name;
 });
