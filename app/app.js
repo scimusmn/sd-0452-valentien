@@ -4,8 +4,6 @@ import jetpack from 'fs-jetpack'; // module loaded from npm
 import { greet } from './hello_world/hello_world'; // code authored by you in this project
 import env from './env';
 
-
-import { jquery } from './vendor/jquery/dist/jquery.min.js';
 import { tween } from './vendor/gsap/src/minified/TweenMax.min';
 import { Zoomer } from './vendor/Zoomer/jquery.fs.zoomer.min';
 import { videojs } from './vendor/video-js/dist/video-js/video';
