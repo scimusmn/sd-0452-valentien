@@ -1,5 +1,5 @@
-export var greet = function() {
-  return 'Hello World!';
+export var appData = function() {
+  this.configXML = {};
 };
 
 export var bye = function() {
