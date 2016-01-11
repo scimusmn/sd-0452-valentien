@@ -40,11 +40,6 @@ Screensaver.prototype.createVideo = function(videoSrc) {
   //Append to html
   $('body').append(videoTag);
 
-  //Initialize player
-  // this.videoPlayer = videojs('screensaver_video', videoOptions, function() {
-  //   // Player (this) is initialized and ready.
-  // });
-
 };
 
 /**
