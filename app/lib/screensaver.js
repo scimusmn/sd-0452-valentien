@@ -1,7 +1,3 @@
-// define(['videojs'], function(videojs) {
-
-// import '../vendor/video-js/dist/video-js/video';
-
 function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback) {
 
   // How long is timeout.
@@ -33,8 +29,8 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
 }
 
 /**
-* Setup fullscreen looping video to be shown during sleep.
-*/
+ * Setup fullscreen looping video to be shown during sleep.
+ */
 Screensaver.prototype.createVideo = function(videoSrc) {
 
   //Create video tag
@@ -52,8 +48,8 @@ Screensaver.prototype.createVideo = function(videoSrc) {
 };
 
 /**
-* Start the screensaver after X seconds of inactivity.
-*/
+ * Start the screensaver after X seconds of inactivity.
+ */
 Screensaver.prototype.timerIncrement = function() {
 
   //Increment counter
