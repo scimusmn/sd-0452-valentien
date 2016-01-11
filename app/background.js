@@ -27,12 +27,11 @@ app.on('ready', function() {
    * There is an active bug with Electron, kiosk mode, and Yosemite.
    * https://github.com/atom/electron/issues/1054
    * This hack makes kiosk mode actually work by waiting for the app to launch
-   * and then issuing a call to go into kiosk mode after a few seconds.
+   * and then issuing a call to go into kiosk mode after a few milliseconds.
    */
   setTimeout(function() {
     mainWindow.setKiosk(true);
-  }, 2000);
-
+  }, 100);
 
   if (env.name === 'test') {
     mainWindow.loadURL('file://' + __dirname + '/spec.html');
