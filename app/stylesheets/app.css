@@ -73,6 +73,27 @@ body {
 /**
  * Fonts
  */
+@font-face {
+  font-family: 'futurats-mediumregular';
+  src: url('../assets/dynamic/fonts/futurats-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'futurats-demiboldregular';
+  src: url('../assets/dynamic/fonts/futurats-demibold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'futurats-lightregular';
+  src: url('../assets/dynamic/fonts/futurats-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 p, h3, h2, h1, span {
   color: #fffdf3;
   font-weight: 200;
