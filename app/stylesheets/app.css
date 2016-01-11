@@ -146,33 +146,9 @@ p {
   content: "\e014";
 }
 
-.rotate-90-cw {
-  /* Safari */
-  -webkit-transform: rotate(90deg);
-  /* Firefox */
-  -moz-transform: rotate(90deg);
-  /* IE */
-  -ms-transform: rotate(90deg);
-  /* Opera */
-  -o-transform: rotate(90deg);
-  /* Internet Explorer */
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
-}
-.rotate-90-ccw {
-  /* Safari */
-  -webkit-transform: rotate(-90deg);
-  /* Firefox */
-  -moz-transform: rotate(-90deg);
-  /* IE */
-  -ms-transform: rotate(-90deg);
-  /* Opera */
-  -o-transform: rotate(-90deg);
-  /* Internet Explorer */
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-}
-
-
-/* Language Toggle */
+/**
+ * Language Toggle
+ */
 #language_btn {
 
   position: fixed;
