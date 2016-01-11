@@ -1,7 +1,7 @@
 // define(['net/language', 'tween'], function(language) {
 import language from './language.js';
 
-function thumbGrid(containerDiv, thumbCloneDiv, configList, numCols, numRows) {
+function ThumbGrid(containerDiv, thumbCloneDiv, configList, numCols, numRows) {
 
   this.containerDiv = containerDiv;
   this.thumbCloneDiv = thumbCloneDiv;
@@ -13,7 +13,7 @@ function thumbGrid(containerDiv, thumbCloneDiv, configList, numCols, numRows) {
 }
 
 // setupGrid() | Create grid by duplicating and customizing the thumbCloneDiv
-thumbGrid.prototype.makeGrid = function() {
+ThumbGrid.prototype.makeGrid = function() {
 
   $(this.thumbCloneDiv).hide(); //Take cloner thumb out of flow.
 
@@ -68,4 +68,4 @@ thumbGrid.prototype.makeGrid = function() {
 
 };
 
-export default thumbGrid;
+export default ThumbGrid;

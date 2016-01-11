@@ -2,7 +2,7 @@
 
 // import '../vendor/video-js/dist/video-js/video';
 
-function screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback) {
+function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback) {
 
   // How long is timeout.
   this.timeoutSeconds = timeoutSeconds || 60;
@@ -35,7 +35,7 @@ function screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
 /**
 * Setup fullscreen looping video to be shown during sleep.
 */
-screensaver.prototype.createVideo = function(videoSrc) {
+Screensaver.prototype.createVideo = function(videoSrc) {
 
   //Create video tag
   var videoTag = '<video id="screensaver_video" style="position:fixed; top:0px; left:0px; z-index:999;" class="video-js vjs-default-skin vjs-big-play-centered"><source src="' + videoSrc + '" type="video/webm" /></video>';
@@ -54,7 +54,7 @@ screensaver.prototype.createVideo = function(videoSrc) {
 /**
 * Start the screensaver after X seconds of inactivity.
 */
-screensaver.prototype.timerIncrement = function() {
+Screensaver.prototype.timerIncrement = function() {
 
   //Increment counter
   this.idleTime = this.idleTime + 1;
@@ -71,7 +71,7 @@ screensaver.prototype.timerIncrement = function() {
 /**
 * Zero the idle timer on any movement.
 */
-screensaver.prototype.anyAction = function() {
+Screensaver.prototype.anyAction = function() {
 
   this.idleTime = 0;
 
@@ -86,7 +86,7 @@ screensaver.prototype.anyAction = function() {
 /**
 * Display the screensaver
 */
-screensaver.prototype.sleep = function() {
+Screensaver.prototype.sleep = function() {
 
   this.active = true;
   this.onSleepCallback();
@@ -100,7 +100,7 @@ screensaver.prototype.sleep = function() {
 /**
 * Remove the screensaver
 */
-screensaver.prototype.awake = function() {
+Screensaver.prototype.awake = function() {
 
   this.active = false;
   this.onAwakeCallback();
@@ -113,4 +113,4 @@ screensaver.prototype.awake = function() {
 
 };
 
-export default screensaver;
+export default Screensaver;

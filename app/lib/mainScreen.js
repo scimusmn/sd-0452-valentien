@@ -1,37 +1,37 @@
-// define(['net/AppData', 'net/ui/ThumbGrid', 'net/ui/ScreenManager', 'tween'], function(AppData, ThumbGrid, ScreenManager, mainScreen, ViewerScreen) {
+// define(['net/AppData', 'net/ui/ThumbGrid', 'net/ui/ScreenManager', 'tween'], function(AppData, ThumbGrid, ScreenManager, MainScreen, ViewerScreen) {
 
-import thumbGrid from './thumbGrid.js';
+import ThumbGrid from './ThumbGrid.js';
 import appData from './appData.js';
 import screenManager from './screenManager.js';
 
-var mainScreen = function(containerDiv) {
+var MainScreen = function(containerDiv) {
 
   this.containerDiv = containerDiv;
 
-  this.thumbGrid = {};
+  this.ThumbGrid = {};
   this.init();
 
 };
 
 // init() | Set up screen layout and buttons
-mainScreen.prototype.init = function() {
+MainScreen.prototype.init = function() {
 
-  this.thumbGrid = new thumbGrid($('#main_nav_grid'), $('#main_nav_grid #thumb_clone'), $(appData.configXML).find('component plants plant'), 5, 6);
-  this.thumbGrid.makeGrid();
+  this.ThumbGrid = new ThumbGrid($('#main_nav_grid'), $('#main_nav_grid #thumb_clone'), $(appData.configXML).find('component plants plant'), 5, 6);
+  this.ThumbGrid.makeGrid();
 
   this.refreshButtonListeners();
 
 };
 
 // refresh() | Refresh displays as needed before showing
-mainScreen.prototype.refresh = function() {
+MainScreen.prototype.refresh = function() {
 
   this.resetGrid();
 
 };
 
 // resetGrid() | Reset visual states of thumb grid
-mainScreen.prototype.resetGrid = function() {
+MainScreen.prototype.resetGrid = function() {
 
   $('#main_nav_grid .thumb').each(function() {
     TweenLite.set($(this), { css: { zIndex: 0, opacity:1, scale:1, boxShadow:'0px 0px 0px 0px rgba(0,0,0,0)' } });
@@ -40,7 +40,7 @@ mainScreen.prototype.resetGrid = function() {
 };
 
 // transitionIn() | Tween in display elements
-mainScreen.prototype.transitionIn = function() {
+MainScreen.prototype.transitionIn = function() {
 
   TweenLite.delayedCall(0.75, function() {
 
@@ -52,7 +52,7 @@ mainScreen.prototype.transitionIn = function() {
 };
 
 // transitionOut() | Tween out display elements
-mainScreen.prototype.transitionOut = function() {
+MainScreen.prototype.transitionOut = function() {
 
   TweenLite.to($('#main_nav_grid'), 1, { css: { left:-1080 }, ease:Power2.easeIn });
   TweenLite.to($('#screen_main .content-left'), 1, { css: { left:-1080 }, delay:0.2, ease:Power2.easeIn });
@@ -60,7 +60,7 @@ mainScreen.prototype.transitionOut = function() {
 };
 
 // featurePlant() | Transition to viewer screen with selected plant
-mainScreen.prototype.featurePlant = function(plantId, plantThumbBtn) {
+MainScreen.prototype.featurePlant = function(plantId, plantThumbBtn) {
 
   //Tell Viewer screen to setting up plant info
   appData.setFeaturePlant(plantId);
@@ -70,7 +70,7 @@ mainScreen.prototype.featurePlant = function(plantId, plantThumbBtn) {
 };
 
 // refreshButtonListeners() | Listen to all buttons on this screen
-mainScreen.prototype.refreshButtonListeners = function() {
+MainScreen.prototype.refreshButtonListeners = function() {
 
   var _this = this;
 
@@ -87,7 +87,7 @@ mainScreen.prototype.refreshButtonListeners = function() {
 };
 
 // disableButtonListeners() | Remove all current button listeners
-mainScreen.prototype.disableButtonListeners = function() {
+MainScreen.prototype.disableButtonListeners = function() {
 
   $(this.containerDiv).find("[data-role='button']").each(function() {
 
@@ -98,7 +98,7 @@ mainScreen.prototype.disableButtonListeners = function() {
 };
 
 // buttonClicked() | All click events for this screen shall pass through here
-mainScreen.prototype.buttonClicked = function(btnId, btnRef) {
+MainScreen.prototype.buttonClicked = function(btnId, btnRef) {
 
   console.log('buttonClicked(btnId): ' + btnId);
 
@@ -123,4 +123,4 @@ mainScreen.prototype.buttonClicked = function(btnId, btnRef) {
 
 };
 
-export default mainScreen;
+export default MainScreen;

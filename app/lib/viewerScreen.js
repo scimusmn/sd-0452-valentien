@@ -4,7 +4,7 @@ import appData from './appData.js';
 import language from './language.js';
 import photoViewer from './photoViewer.js';
 
-function viewerScreen(containerDiv) {
+function ViewerScreen(containerDiv) {
 
   this.containerDiv = containerDiv;
 
@@ -18,21 +18,21 @@ function viewerScreen(containerDiv) {
 }
 
 // init() | Set up screen layout and buttons
-viewerScreen.prototype.init = function() {
+ViewerScreen.prototype.init = function() {
 
   this.refreshButtonListeners();
 
 };
 
 // refresh() | Refresh displays as needed before showing
-viewerScreen.prototype.refresh = function() {
+ViewerScreen.prototype.refresh = function() {
 
   this.updateFeaturePlant(appData.featuredPlant);
 
 };
 
 // updateFeaturePlant() | Update displays this new plant
-viewerScreen.prototype.updateFeaturePlant = function(plantId) {
+ViewerScreen.prototype.updateFeaturePlant = function(plantId) {
 
   var plantConfig = $(appData.configXML).find('plants plant[id="' + plantId + '"]').first();
 
@@ -80,21 +80,21 @@ viewerScreen.prototype.updateFeaturePlant = function(plantId) {
 };
 
 // showPhotoDisplay() | Reset and show current plant photos
-viewerScreen.prototype.showPhotoDisplay = function(plantId) {
+ViewerScreen.prototype.showPhotoDisplay = function(plantId) {
 
   $('#viewer').show();
 
 };
 
 // hidePhotoDisplay() | Hide current plant photos
-viewerScreen.prototype.hidePhotoDisplay = function(plantId) {
+ViewerScreen.prototype.hidePhotoDisplay = function(plantId) {
 
   $('#viewer').hide();
 
 };
 
 // toggleInfoContainer() | show/hide info container
-viewerScreen.prototype.toggleInfoContainer = function(show) {
+ViewerScreen.prototype.toggleInfoContainer = function(show) {
 
   if (show == true) {
 
@@ -120,12 +120,12 @@ viewerScreen.prototype.toggleInfoContainer = function(show) {
 };
 
 // resetInfoContainer() | Reset info container after delay
-viewerScreen.prototype.resetInfoContainer = function() {
+ViewerScreen.prototype.resetInfoContainer = function() {
   if (this.isInfoContainerShowing() == false) this.toggleInfoContainer(true);
 };
 
 // isInfoContainerShowing() | Checks state of info container
-viewerScreen.prototype.isInfoContainerShowing = function() {
+ViewerScreen.prototype.isInfoContainerShowing = function() {
 
   if (parseInt($('#info_container').css('left')) < -1) {
 
@@ -140,7 +140,7 @@ viewerScreen.prototype.isInfoContainerShowing = function() {
 };
 
 // transitionIn() | Tween in display elements
-viewerScreen.prototype.transitionIn = function() {
+ViewerScreen.prototype.transitionIn = function() {
 
   //Screen container
   TweenLite.to($(this.containerDiv), 1, { css: { left:0 }, delay:0, ease:Power2.easeIn });
@@ -176,7 +176,7 @@ viewerScreen.prototype.transitionIn = function() {
 };
 
 // transitionOut() | Tween out display elements
-viewerScreen.prototype.transitionOut = function() {
+ViewerScreen.prototype.transitionOut = function() {
 
   TweenLite.to($(this.containerDiv), 1, { css: { left:1080 }, delay:0.4, ease:Power2.easeIn });
 
@@ -198,7 +198,7 @@ viewerScreen.prototype.transitionOut = function() {
 };
 
 // refreshButtonListeners() | Listen to all buttons on this screen
-viewerScreen.prototype.refreshButtonListeners = function() {
+ViewerScreen.prototype.refreshButtonListeners = function() {
 
   var _this = this;
 
@@ -215,7 +215,7 @@ viewerScreen.prototype.refreshButtonListeners = function() {
 };
 
 // disableButtonListeners() | Remove all current button listeners
-viewerScreen.prototype.disableButtonListeners = function() {
+ViewerScreen.prototype.disableButtonListeners = function() {
 
   $(this.containerDiv).find("[data-role='button']").each(function() {
 
@@ -226,7 +226,7 @@ viewerScreen.prototype.disableButtonListeners = function() {
 };
 
 // buttonClicked() | All click events for this screen shall pass through here
-viewerScreen.prototype.buttonClicked = function(btnId, btnRef) {
+ViewerScreen.prototype.buttonClicked = function(btnId, btnRef) {
 
   console.log('buttonClicked(btnId): ' + btnId);
 
@@ -283,4 +283,4 @@ viewerScreen.prototype.buttonClicked = function(btnId, btnRef) {
 
 };
 
-export default viewerScreen;
+export default ViewerScreen;
