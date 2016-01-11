@@ -3,7 +3,7 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
   // How long is timeout.
   this.timeoutSeconds = timeoutSeconds || 60;
 
-  //Callback functions to reset external
+  // Callback functions to reset external
   this.onSleepCallback = onSleepCallback || function() {};
 
   this.onAwakeCallback = onAwakeCallback || function() {};
@@ -20,10 +20,10 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
   // Zero the idle timer on any movement.
   $('body').on('touchstart keypress mousemove mousedown', function() { _this.anyAction(); });
 
-  //Setup video screensaver
+  // Setup video screensaver
   this.createVideo(videoSrc);
 
-  //Default to hidden screensaver
+  // Default to hidden screensaver
   this.awake();
 
 }
@@ -33,11 +33,11 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
  */
 Screensaver.prototype.createVideo = function(videoSrc) {
 
-  //Create video tag
+  // Create video tag
   var videoTag = '<video id="screensaver_video" style="position:fixed; top:0px; left:0px; z-index:999;" class="video-js vjs-default-skin vjs-big-play-centered"><source src="' + videoSrc + '" type="video/webm" /></video>';
   var videoOptions = { controls: false, autoplay: false, loop: 'true', preload: 'auto' };
 
-  //Append to html
+  // Append to html
   $('body').append(videoTag);
 
 };
@@ -47,14 +47,12 @@ Screensaver.prototype.createVideo = function(videoSrc) {
  */
 Screensaver.prototype.timerIncrement = function() {
 
-  //Increment counter
+  // Increment counter
   this.idleTime = this.idleTime + 1;
 
   // If it's been X seconds of inactivity, save the screen
   if (this.idleTime > this.timeoutSeconds && this.active == false) {
-
     this.sleep();
-
   }
 
 };
@@ -63,15 +61,10 @@ Screensaver.prototype.timerIncrement = function() {
 * Zero the idle timer on any movement.
 */
 Screensaver.prototype.anyAction = function() {
-
   this.idleTime = 0;
-
   if (this.active == true) {
-
     this.awake();
-
   }
-
 };
 
 /**
@@ -82,7 +75,7 @@ Screensaver.prototype.sleep = function() {
   this.active = true;
   this.onSleepCallback();
 
-  //Show the video
+  // Show the video
   $('#screensaver_video').fadeIn('slow');
   this.videoPlayer.play();
 
@@ -96,7 +89,7 @@ Screensaver.prototype.awake = function() {
   this.active = false;
   this.onAwakeCallback();
 
-  //Hide the video
+  // Hide the video
   var _this = this;
   $('#screensaver_video').fadeOut('slow', function() {
     $('#screensaver_video').get(0).pause();
