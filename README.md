@@ -9,6 +9,10 @@ This code is offered here for example and reference. The compiled application is
 The application features a JS based high res image viewer, giving visitors the ability to zoom in on an high res image by double clicking.
 
 ## Installation and setup
+To set up the application the first time, run:
+
+    $ npm install
+
 To start the application in development mode, run:
 
     $ npm start
