@@ -19,10 +19,10 @@ language.setupToggle = function(uniqueId) {
   $(this.toggleBtn).on('click', function() {
     if (language.getCurrentlanguage() == language.ENGLISH) {
       $(_this.toggleTxt).html('English');
-      language.setlanguage(language.SPANISH);
+      language.setLanguage(language.SPANISH);
     } else {
       $(_this.toggleTxt).html('Español');
-      language.setlanguage(language.ENGLISH);
+      language.setLanguage(language.ENGLISH);
     }
 
   });
@@ -35,12 +35,12 @@ language.setupTranslations = function(xml) {
   language.translationXML = xml;
 
   //Default to english
-  language.setlanguage(language.ENGLISH);
+  language.setLanguage(language.ENGLISH);
 
 };
 
-/* setlanguage() | Find and replace all text by translation ids */
-language.setlanguage = function(languageId) {
+/* setLanguage() | Find and replace all text by translation ids */
+language.setLanguage = function(languageId) {
 
   language.currentlanguage = languageId;
 

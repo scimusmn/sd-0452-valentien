@@ -34,7 +34,7 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
 Screensaver.prototype.createVideo = function(videoSrc) {
 
   // Create video tag
-  var videoTag = '<video id="screensaver_video" style="position:fixed; top:0px; left:0px; z-index:999;" class="video-js vjs-default-skin vjs-big-play-centered"><source src="' + videoSrc + '" type="video/webm" /></video>';
+  var videoTag = '<video loop id="screensaver_video" style="position:fixed; top:0px; left:0px; z-index:999;" class="video-js vjs-default-skin vjs-big-play-centered"><source src="' + videoSrc + '" type="video/webm" /></video>';
   var videoOptions = { controls: false, autoplay: false, loop: 'true', preload: 'auto' };
 
   // Append to html
@@ -77,7 +77,7 @@ Screensaver.prototype.sleep = function() {
 
   // Show the video
   $('#screensaver_video').fadeIn('slow');
-  this.videoPlayer.play();
+  $('#screensaver_video').get(0).play();
 
 };
 

@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var ss = new Screensaver(
       appData.screensaverTimeout, './assets/dynamic/videos/screensaver.webm', function() {
         //On sleep
-        language.setLanguage(Language.ENGLISH);
-        screenManager.showscreen(screenManager.SCREEN_MAIN);
+        language.setLanguage(language.ENGLISH);
+        screenManager.showScreen(screenManager.SCREEN_MAIN);
       }
     );
 
