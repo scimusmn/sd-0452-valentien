@@ -20,3 +20,6 @@ To start the application in development mode, run:
 To build a release of the application for installation on the exhibit kiosk, run:
 
     $ npm run release
+
+# Historical note
+This is the latest version of the Valentien application, which was primarily developed in [this older repository](https://github.com/scimusmn/sd-valentien-old). This old version of the application was built to use Node Webkit and had some commit history that we didn't want to bring along into this new application which is designed for Electron. Refer to the old repository for the commit and attribution history if needed.
