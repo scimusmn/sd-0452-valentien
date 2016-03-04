@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     language.setupTranslations($(appData.configXML).find('component').first());
 
     var ss = new Screensaver(
-      appData.screensaverTimeout, './assets/dynamic/videos/screensaver.webm', function() {
+      appData.screensaverTimeout, './assets/dynamic/videos/screensaver.mp4', function() {
         //On sleep
         language.setLanguage(language.ENGLISH);
         screenManager.showScreen(screenManager.SCREEN_MAIN);
