@@ -3,7 +3,7 @@
   "productName": "Valentien painting viewer",
   "identifier": "org.smm.sdnhm.c2c.valentien",
   "description": "Zoomable painting viewer for the San Diego Natural History Museum's Coast to Cactus exhibit.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Science Museum of Minnesota",
   "main": "background.js",
   "dependencies": {
